@@ -1,204 +1,355 @@
-# 🔄 SentenceFlow Reverser
+# 🧠 SmartTextFlow Processing Engine
 
-A lightweight JavaScript utility that reorganizes sentences by reversing the order of words while automatically normalizing whitespace.
+An advanced text-processing engine built with JavaScript that cleans, analyzes, and transforms raw text into structured information.
 
-Designed as a reusable text-processing component, the project demonstrates efficient string manipulation, parsing, normalization, and array-based transformations.
-
----
-
-## 📖 Project Overview
-
-SentenceFlow Reverser provides a simple way to transform text into a standardized format by reversing the sequence of words while eliminating unnecessary spaces.
-
-Instead of focusing on raw string operations, the project presents the algorithm as a reusable text utility suitable for document processing, search indexing, formatting pipelines, and natural language preprocessing.
+The system combines string algorithms, parsing techniques, data processing, and analytical features to create a reusable document-processing workflow.
 
 ---
 
-# 🌍 Real-World Concept
+# 📖 Project Overview
 
-Imagine a document-processing pipeline that receives text from different sources.
+Real-world applications receive text from multiple sources:
 
-Some text contains:
+- User-generated content
+- Documents
+- Chat messages
+- Reports
+- Search queries
 
-- Leading spaces
-- Trailing spaces
-- Multiple spaces between words
+These inputs often contain:
 
-Before storing or analyzing the text, the system needs to:
+- Extra spaces
+- Inconsistent formatting
+- Repeated words
+- Unstructured content
 
-- Normalize whitespace
-- Preserve every word
-- Reverse the word sequence
-- Produce clean standardized output
-
-SentenceFlow Reverser performs exactly that transformation.
-
----
-
-# 💡 Core Concept
-
-The utility follows three major stages:
-
-1. Normalize whitespace
-2. Split text into words
-3. Reverse word order
-4. Join words with a single space
-
-This keeps the implementation simple, readable, and efficient.
+SmartTextFlow Processing Engine processes raw text and converts it into clean, meaningful, and structured output.
 
 ---
 
-# ⚙️ How the System Works
+# 🌍 Real-World Scenario
+
+Imagine a company building a document management platform.
+
+Before storing documents, the system needs to:
+
+✅ Clean unwanted spaces  
+✅ Format sentences  
+✅ Analyze word usage  
+✅ Generate statistics  
+✅ Reverse or reorder content  
+✅ Prepare text for searching  
+
+SmartTextFlow acts as the preprocessing layer before further analysis.
+
+---
+
+# 🚀 Core Features
+
+## 🧹 Smart Text Cleaning
+
+Automatically:
+
+- Removes unnecessary spaces
+- Fixes inconsistent formatting
+- Normalizes sentences
+
+
+## 🔄 Sentence Transformation
+
+Supports:
+
+- Reverse word ordering
+- Custom sentence formatting
+- Text restructuring
+
+
+## 📊 Text Analytics
+
+Generates:
+
+- Total words
+- Character count
+- Unique word count
+- Most frequently used words
+
+
+## 🔎 Keyword Extraction
+
+Finds important words based on:
+
+- Frequency
+- Word length
+- Usage patterns
+
+
+## 📝 Processing Pipeline
+
+Multiple operations can be chained:
 
 ```
 Raw Text
-     │
-     ▼
-Trim Extra Spaces
-     │
-     ▼
-Split Into Words
-     │
-     ▼
-Reverse Word Order
-     │
-     ▼
-Join Using Single Spaces
-     │
-     ▼
-Formatted Output
+   |
+   ↓
+Cleaning
+   |
+   ↓
+Analysis
+   |
+   ↓
+Transformation
+   |
+   ↓
+Final Report
 ```
 
 ---
 
-# 🧠 Algorithm Used
+# 🧠 Algorithms & Data Structures
 
-- String Normalization
-- Regular Expression Parsing
-- Array Manipulation
-- Reverse Traversal
+The project uses:
 
----
-
-# 🚀 Step-by-Step Logic
-
-1. Receive an input string.
-2. Remove leading and trailing whitespace.
-3. Split words using one or more spaces.
-4. Reverse the array.
-5. Join words using exactly one space.
-6. Return the transformed sentence.
+| Concept | Usage |
+|---|---|
+| Strings | Text processing |
+| Arrays | Word storage |
+| Hash Maps | Frequency counting |
+| Regular Expressions | Pattern matching |
+| Sorting Algorithms | Ranking keywords |
+| Stack Concept | Reversal operations |
 
 ---
 
-# ✨ Key Features
+# ⚙️ How The System Works
 
-- Removes unnecessary whitespace
-- Reverses sentence structure
-- Clean and reusable implementation
-- Easy to integrate
-- Beginner-friendly
-- Efficient O(n) solution
-- Modern JavaScript
+## Step 1: Receive Raw Text
+
+Example:
+
+```
+"   JavaScript    is   powerful   and useful   "
+```
 
 ---
 
-# 📌 Example
+## Step 2: Normalize Content
 
-### Input
+The system removes unnecessary spaces.
+
+Result:
+
+```
+"JavaScript is powerful and useful"
+```
+
+---
+
+## Step 3: Tokenize Words
+
+Convert sentence into:
+
+```javascript
+[
+ "JavaScript",
+ "is",
+ "powerful",
+ "and",
+ "useful"
+]
+```
+
+---
+
+## Step 4: Analyze Data
+
+Generate:
+
+```json
+{
+ "words": 5,
+ "characters": 42,
+ "uniqueWords": 5
+}
+```
+
+---
+
+## Step 5: Transform Sentence
+
+Reverse mode:
+
+```
+useful and powerful is JavaScript
+```
+
+---
+
+# 📌 Example Usage
+
+## Input
 
 ```text
-"   welcome   to    javascript   "
-```
-
-### Output
-
-```text
-javascript to welcome
+"   coding   makes   developers   smarter   "
 ```
 
 ---
 
-# ⌛ Complexity Analysis
+## Processing Result
 
-| Operation | Complexity |
-|------------|------------|
-| Time | **O(n)** |
-| Space | **O(n)** |
-
----
-
-# 🛠 Technologies Used
-
-- JavaScript (ES6)
-- Regular Expressions
-- Array Methods
-- String Manipulation
+```json
+{
+  "cleanText": "coding makes developers smarter",
+  "reversedText": "smarter developers makes coding",
+  "wordCount": 4,
+  "uniqueWords": 4,
+  "keywords": [
+    "developers",
+    "coding"
+  ]
+}
+```
 
 ---
 
 # 📂 Project Structure
 
 ```
-SentenceFlow-Reverser
+SmartTextFlow-Processing-Engine
+│
+├── src
+│   │
+│   ├── cleaner.js
+│   ├── analyzer.js
+│   ├── transformer.js
+│   ├── keywordExtractor.js
+│   └── app.js
+│
+├── examples
+│   └── sample.txt
 │
 ├── README.md
-├── reverseWords.js
+├── package.json
 └── LICENSE
 ```
 
 ---
 
-# ▶️ How to Run
+# 🛠 Technologies Used
 
-Clone the repository:
+- JavaScript (ES6+)
+- Node.js
+- Regular Expressions
+- Arrays
+- Objects / Hash Maps
+- File System Module
+
+---
+
+# ▶️ Installation & Running
+
+Clone repository:
 
 ```bash
-git clone https://github.com/mirhamzarahman/SentenceFlow-Reverser.git
+git clone https://github.com/mirhamzarahman/SmartTextFlow-Processing-Engine.git
 ```
 
-Go inside the project:
+Move into directory:
 
 ```bash
-cd SentenceFlow-Reverser
+cd SmartTextFlow-Processing-Engine
 ```
 
-Run using Node.js:
+Install dependencies:
 
 ```bash
-node reverseWords.js
+npm install
 ```
 
-Or import the function into your own project.
+Run project:
+
+```bash
+node src/app.js
+```
+
+---
+
+# 📊 Complexity Analysis
+
+Let **n** be the number of characters.
+
+| Operation | Complexity |
+|-|-|
+| Cleaning | O(n) |
+| Word Processing | O(n) |
+| Frequency Analysis | O(n) |
+| Sorting Keywords | O(k log k) |
+
+Space Complexity:
+
+```
+O(n)
+```
+
+because processed words and analytics data are stored.
+
+---
+
+# 💻 Sample Console Output
+
+```
+SmartTextFlow Engine Started
+
+Original:
+"  learn javascript with projects "
+
+Clean Text:
+"learn javascript with projects"
+
+Reverse:
+"projects with javascript learn"
+
+Words:
+4
+
+Top Keywords:
+javascript
+projects
+```
 
 ---
 
 # 🎯 Learning Outcomes
 
-This project demonstrates:
+By building this project, you learn:
 
-- String normalization
-- Regular expressions
-- Array transformations
-- Functional programming concepts
-- Clean JavaScript coding style
-- Building reusable utilities
+- Advanced string manipulation
+- Text preprocessing techniques
+- Hash map based counting
+- Data transformation pipelines
+- Modular JavaScript architecture
+- Writing scalable utilities
+- Designing real-world software systems
 
 ---
 
-# 🚀 Future Improvements
+# 🔮 Future Improvements
 
-- Support punctuation-aware reversal
-- Unicode optimization
-- Browser package
-- npm package
-- CLI interface
-- Batch file processing
-- TypeScript version
-- Performance benchmarking
+Possible upgrades:
+
+- AI-based sentiment analysis
+- Language detection
+- Grammar correction
+- PDF/document support
+- REST API version
+- Database storage
+- Web dashboard
+- Machine learning keyword ranking
+- Browser extension
 
 ---
 
 # 📄 License
 
-This project is licensed under the MIT License.
+MIT License
+
+Created for learning, experimentation, and open-source development.
